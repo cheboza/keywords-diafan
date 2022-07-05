@@ -1,0 +1,24 @@
+{
+    "name": "diafanfh/keywords",
+    "description": "search into diafan cms",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Diafanfh\\Keywords\\": "src/service"
+        }
+    },
+    "authors": [
+        {
+            "name": "Danilin A",
+            "email": "danilin.a@fh-mebel.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1",
+        "laravel/framework": ">6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    }
+}
