@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d01d64fff0467b808b1e01f08a38b5a",
+    "content-hash": "2d0fd66d4aba53ed27748afc6a6fe864",
     "packages": [
         {
             "name": "brick/math",
@@ -2675,12 +2675,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "7ceb67897f603dc3d26f3671b42cc29fe6c4aee7"
+                "reference": "34c95d2d5ee7fc0fbb0f31a68bbb336fd626e7fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/7ceb67897f603dc3d26f3671b42cc29fe6c4aee7",
-                "reference": "7ceb67897f603dc3d26f3671b42cc29fe6c4aee7",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/34c95d2d5ee7fc0fbb0f31a68bbb336fd626e7fd",
+                "reference": "34c95d2d5ee7fc0fbb0f31a68bbb336fd626e7fd",
                 "shasum": ""
             },
             "require": {
@@ -2725,7 +2725,7 @@
             "description": "Helps sending emails",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/mailer/tree/6.1"
+                "source": "https://github.com/symfony/mailer/tree/6.2"
             },
             "funding": [
                 {
@@ -2741,7 +2741,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-06-27T17:24:16+00:00"
+            "time": "2022-06-30T15:32:53+00:00"
         },
         {
             "name": "symfony/mime",
@@ -5999,7 +5999,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1"
+        "php": ">=7.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

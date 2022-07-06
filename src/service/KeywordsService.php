@@ -7,16 +7,14 @@ use Diafanfh\Keywords\Lib\SearchWords;
 
 class KeywordsService
 {
-    private string $request;
     private SearchWords $searchWordHelper;
 
     /**
      * @param string $request
      * @param callable $getKeyWords
      */
-    public function __construct(string $request)
+    public function __construct()
     {
-        $this->request = $request;
         $this->searchWordHelper = new SearchWords();
     }
 
@@ -26,11 +24,11 @@ class KeywordsService
      * @param string $request
      * @return array
      */
-    public function keys(callable $getKeyWords)
+    public function keys(string $request, callable $getKeyWords)
     {
-        $arraySearchStems = $this->searchWordHelper->getUniqueStemWords($this->request);
+        $arraySearchStems = $this->searchWordHelper->getUniqueStemWords($request);
         $keys = $getKeyWords($arraySearchStems);
-        $arrayDiff = array_diff($arraySearchStems, $keys);
+        $arrayDiff = array_diff($arraySearchStems, array_column($keys, 'keyword'));
 
         foreach ($arrayDiff as $diff) {
             $handledKey = SearchWordHandler::handle(
@@ -39,7 +37,7 @@ class KeywordsService
                     if(!empty($searchWord))
                     {
                         $keyHandled = $this->searchWordHelper->getUniqueStemWords($searchWord);
-                        $key = $getKeyWords($keyHandled);
+                        $key = $getKeyWords( array_column($keyHandled, 'id') );
                         return (!empty($key) ? $key : null);
                     }
                     return null;
