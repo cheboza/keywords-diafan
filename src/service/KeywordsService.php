@@ -18,13 +18,15 @@ class KeywordsService
         $this->searchWordHelper = new SearchWords();
     }
 
+
     /**
-     * Start search
-     *
      * @param string $request
+     * @param callable $getKeyWords Callback function returned array keywords form app store
+     * array must have mask ["id", "keyword"]
+     *
      * @return array
      */
-    public function keys(string $request, callable $getKeyWords)
+    public function keys(string $request, callable $getKeyWords): array
     {
         $arraySearchStems = $this->searchWordHelper->getUniqueStemWords($request);
         $keys = $getKeyWords($arraySearchStems);
@@ -37,7 +39,7 @@ class KeywordsService
                     if(!empty($searchWord))
                     {
                         $keyHandled = $this->searchWordHelper->getUniqueStemWords($searchWord);
-                        $key = $getKeyWords( array_column($keyHandled, 'id') );
+                        $key = $getKeyWords( $keyHandled );
                         return (!empty($key) ? $key : null);
                     }
                     return null;
